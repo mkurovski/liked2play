@@ -5,6 +5,7 @@ Add a short description here!
 ## Description
 
 A longer description of your project goes here...
+- add the preliminary authentication flow requirements to be set up here, i.e. copy the section from the notebook here
 
 ## Installation
 
@@ -42,6 +43,17 @@ Optional and needed only once after `git clone`:
 
 
 Then take a look into the `scripts` and `notebooks` folders.
+
+## Usage
+
+Adapt the `config.json` according to your needs
+
+Analysis:
+
+```
+liked2play -c configs/config.json -m analyze -v
+```
+
 
 ## Dependency Management & Reproducibility
 
