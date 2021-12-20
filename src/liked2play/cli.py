@@ -47,7 +47,7 @@ def parse_args(args):
         help="Mode can be Data Analysis, Feature Preprocessing,"
         "Playlist Generation, or Upload",
         type=str,
-        choices=["analyze", "preprocess", "generate", "upload"],
+        choices=["analyze", "preprocess", "generate", "upload", "end2end"],
         metavar="STR",
         required=True,
     )
