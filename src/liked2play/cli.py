@@ -13,6 +13,9 @@ import os
 import sys
 
 from .analysis import analyze_gdpr_data
+from .features import preprocess_music_data
+from .generator import generate_playlist
+from .uploader import upload_playlist
 
 _logger = logging.getLogger(__name__)
 
@@ -95,31 +98,15 @@ def run():
     if args.mode == "analyze":
         analyze_gdpr_data(config)
     elif args.mode == "preprocess":
-        raise NotImplementedError("Not Implemented yet")
-        # preprocess_music_data(config)
+        preprocess_music_data(config)
     elif args.mode == "generate":
-        raise NotImplementedError("Not Implemented yet")
-        # generate_playlist(config)
+        generate_playlist(config)
     elif args.mode == "upload":
-        raise NotImplementedError("Not Implemented yet")
-        # upload_playlist(config)
-
-    # 1. Read Data: Liked Songs and Streaming History
-
-    # 2. Preprocess: Compute counts (min_threshold), last recently played
-
-    # 3. Fetch Audio Features
-
-    # 4. Join all the Data
-
-    # 5. Compute some summary statistics
-
-    # 6. Create Features: Scale Attributes,
-    # compute users representation, compute similarities, compute ordering
-
-    # 7. Create Playlist: for the top_k songs, create the playlist and persist
-
-    # 8. Push playlist into account as playlist recommendation
+        upload_playlist(config)
+    elif args.mode == "end2end":
+        preprocess_music_data(config)
+        generate_playlist(config)
+        upload_playlist(config)
 
 
 if __name__ == "__main__":

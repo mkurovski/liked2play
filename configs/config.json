@@ -1,7 +1,12 @@
 {
   "gdpr_data_path": "/Users/mkurovski/recsys/liked2play/data/raw/MyData/",
   "interim_storage_folder": "/Users/mkurovski/recsys/liked2play/data/interim/",
+  "user_id_path": "/Users/mkurovski/recsys/liked2play/secrets/user_id.txt",
   "client_id_path": "/Users/mkurovski/recsys/liked2play/secrets/client_id.txt",
   "client_secret_path": "/Users/mkurovski/recsys/liked2play/secrets/client_secret.txt",
-  "play_threshold": 30000
+  "redirect_url": "http://example.com",
+  "playlist_name": "Your Rediscover Past",
+  "description": "Listen to your favorite liked songs you haven't listened to for more than a year",
+  "play_threshold": 30000,
+  "top_k_songs": 20
 }
