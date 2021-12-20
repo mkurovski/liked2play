@@ -1,11 +1,11 @@
 # liked2play
 
-Add a short description here!
+Use your personal Spotify data to create your own playlists for long-term liked songs rediscovery - rediscover the past.
 
 ## Description
 
-A longer description of your project goes here...
-- add the preliminary authentication flow requirements to be set up here, i.e. copy the section from the notebook here
+This package uses your personal Spotify data, i.e. your past year's streaming history and your liked songs playlist,
+to generate a playlist of music you might like and rediscover again, but haven't listend to for more than a year.
 
 ## Installation
 
@@ -42,18 +42,40 @@ Optional and needed only once after `git clone`:
    A simple `nbstripout --uninstall` will revert these changes.
 
 
-Then take a look into the `scripts` and `notebooks` folders.
+Then take a look into the `notebooks` folders.
 
 ## Usage
 
-Adapt the `config.json` according to your needs
+There are two steps that need to be performed before you can use this. The best thing to do is to read
+[this]() blogpost that guides you through everything.
 
-Analysis:
+1. Request your personal usage data [here](https://www.spotify.com/us/account/privacy). From my own experience, this took a couple of days.
+2. Download your personal data once available (you will be notified by email) and extract it to your machine.
+3. Create your Spotify API credentials [here](https://developer.spotify.com/dashboard/login) by adding a new app. Also add yourself as user to the app. Save
+   - `client_id`
+   - `client_secret`
+   - `user_id`
 
+   to your machine.
+4. Adapt the config template `config.json` according to your own paths and preferences.
+
+With the package installed the command `liked2play` becomes available on your system.
+There are two required arguments:
+1. `-c` stands for _config_ and expects the filepath of your `config.json`
+2. `-m` stands for _mode_ and expects one of the steps you want to perform:
+   - `analyze`: analyzes your liked songs and streaming history and generates a small summary statistics
+   - `preprocess`: fetches music features and joins information with streaming information and liked songs required for determining your music taste profile
+   - `generate`: uses your music taste profile to determine the _top-k_ songs to resemble your "Rediscover Past" playlist
+   - `upload`: upload the generated playlist to your Spotify account
+   - `end2end`: performs `preprocess`, `generate`, and `upload` in a single pass
+
+During some runs you will be redirected to a website that starts with the URL you specified in the `config.json`.
+Copy the full URL and enter it in your shell when asked for. This is for authentification.
+
+Example Usage:
 ```
 liked2play -c configs/config.json -m analyze -v
 ```
-
 
 ## Dependency Management & Reproducibility
 
