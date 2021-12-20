@@ -25,8 +25,6 @@ _logger = logging.getLogger(__name__)
 def preprocess_music_data(cfg: dict):
     folderpath = cfg["gdpr_data_path"]
     liked_songs = read_liked_songs(folderpath)
-    # test mode
-    liked_songs = liked_songs.iloc[:200]
     streamed_songs = read_streaming_history(folderpath)
     streamed_songs = streamed_songs[streamed_songs["msPlayed"] >= cfg["play_threshold"]]
 
@@ -59,9 +57,7 @@ def preprocess_music_data(cfg: dict):
         audio_features.drop(columns="id"), how="left", on="uri"
     )
 
-    filepath = os.path.join(
-        cfg["interim_storage_folder"], "TEST_liked_songs_augmented.csv"
-    )
+    filepath = os.path.join(cfg["interim_storage_folder"], "liked_songs_augmented.csv")
     _logger.info(f"Saving augmented liked songs to {filepath}")
     liked_songs.to_csv(filepath, index=False)
 

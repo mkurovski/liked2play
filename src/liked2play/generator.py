@@ -30,9 +30,7 @@ scaled_attributes = [
 
 
 def generate_playlist(cfg: dict):
-    filepath = os.path.join(
-        cfg["interim_storage_folder"], "TEST_liked_songs_augmented.csv"
-    )
+    filepath = os.path.join(cfg["interim_storage_folder"], "liked_songs_augmented.csv")
     _logger.info(f"Loading augmented raw features from {filepath} ...")
     liked_songs = pd.read_csv(filepath)
 

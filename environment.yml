@@ -5,7 +5,7 @@ channels:
 dependencies:
   - ipython
   - jupyterlab
-  - numpy
+  - numpy<1.20
   - pandas
   - python=3.9
   - scikit-learn
@@ -13,5 +13,6 @@ dependencies:
   - seaborn
   - statsmodels
   - pip
+  - umap-learn
   - pip:
       - spotipy
