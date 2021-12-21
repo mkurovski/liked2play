@@ -1,3 +1,11 @@
+"""
+Utility Functions
+"""
+__author__ = "Marcel Kurovski"
+__copyright__ = "Marcel Kurovski"
+__license__ = "mit"
+
+
 import base64
 from typing import Dict
 

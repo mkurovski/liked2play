@@ -5,8 +5,7 @@ __author__ = "Marcel Kurovski"
 __copyright__ = "Marcel Kurovski"
 __license__ = "mit"
 
-# finish module before 02:15
-# finish the upload module before 02:30
+
 import logging
 import os
 
@@ -16,9 +15,9 @@ import pandas as pd
 _logger = logging.getLogger(__name__)
 
 
-unscaled_attributes = ["key", "loudness", "mode", "tempo"]
-# TODO: Move mode to scaled attributes possibly
+unscaled_attributes = ["key", "loudness", "tempo"]
 scaled_attributes = [
+    "mode",
     "danceability",
     "energy",
     "speechiness",
@@ -41,7 +40,6 @@ def generate_playlist(cfg: dict):
     features = liked_songs[feature_cols].copy()
 
     # scale the unscaled features
-    # TODO: also check feature transformations for sclaed attributes
     # assuming at least ordinal scale
     features["key"] = features["key"] / 11
     # TODO: improve beyond min-max-scaling
@@ -61,7 +59,11 @@ def generate_playlist(cfg: dict):
 
     order = np.argsort(similarities)[::-1]
     order = [val for val in order if val in np.where(not_listened)[0]]
-    # TODO: Check if number of songs can be fulfilled or not
+    if len(order) < cfg["top_k_songs"]:
+        _logger.warning(
+            f"Only {len(order)} songs remain, "
+            f"requested {cfg['top_k_songs']} will not be fulfilled."
+        )
     new_playlist = liked_songs.loc[order[: cfg["top_k_songs"]]]
     output_path = os.path.join(
         cfg["interim_storage_folder"], "recommended_playlist.csv"
