@@ -6,6 +6,8 @@ Use your personal Spotify data to create your own playlists for long-term liked 
 
 This package uses your personal Spotify data, i.e. your past year's streaming history and your liked songs playlist,
 to generate a playlist of music you might like and rediscover again, but haven't listend to for more than a year.
+Check out [this](https://medium.com/@marcel.kurovski/your-rediscover-past-proposing-a-new-personalized-playlist-for-spotify-5e8f3b6f04f8)
+blogpost for a more detailed description and some guidance. Cheers!
 
 ## Installation
 
