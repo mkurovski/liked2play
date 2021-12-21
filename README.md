@@ -42,8 +42,6 @@ Optional and needed only once after `git clone`:
    A simple `nbstripout --uninstall` will revert these changes.
 
 
-Then take a look into the `notebooks` folders.
-
 ## Usage
 
 There are two steps that need to be performed before you can use this. The best thing to do is to read
@@ -94,29 +92,18 @@ liked2play -c configs/config.json -m analyze -v
 ## Project Organization
 
 ```
-├── AUTHORS.md              <- List of developers and maintainers.
-├── CHANGELOG.md            <- Changelog to keep track of new features and fixes.
 ├── LICENSE.txt             <- License as chosen on the command-line.
 ├── README.md               <- The top-level README for developers.
-├── configs                 <- Directory for configurations of model & application.
 ├── data
 │   ├── external            <- Data from third party sources.
 │   ├── interim             <- Intermediate data that has been transformed.
 │   ├── processed           <- The final, canonical data sets for modeling.
 │   └── raw                 <- The original, immutable data dump.
-├── docs                    <- Directory for Sphinx documentation in rst or md.
 ├── environment.yml         <- The conda environment file for reproducibility.
-├── models                  <- Trained and serialized models, model predictions,
-│                              or model summaries.
 ├── notebooks               <- Jupyter notebooks. Naming convention is a number (for
 │                              ordering), the creator's initials and a description,
 │                              e.g. `1.0-fw-initial-data-exploration`.
 ├── pyproject.toml          <- Build system configuration. Do not change!
-├── references              <- Data dictionaries, manuals, and all other materials.
-├── reports                 <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures             <- Generated plots and figures for reports.
-├── scripts                 <- Analysis and production scripts which import the
-│                              actual Python package, e.g. train_model.py.
 ├── setup.cfg               <- Declarative configuration of your project.
 ├── setup.py                <- Use `pip install -e .` to install for development or
 |                              or create a distribution with `tox -e build`.
