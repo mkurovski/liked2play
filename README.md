@@ -2,6 +2,8 @@
 
 Use your personal Spotify data to create your own playlists for long-term liked songs rediscovery - rediscover the past.
 
+![](img/rediscover_past.jpg)
+
 ## Description
 
 This package uses your personal Spotify data, i.e. your past year's streaming history and your liked songs playlist,
