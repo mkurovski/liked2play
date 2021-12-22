@@ -16,20 +16,22 @@ dependencies:
   - brotli=1.0.9
   - brotli-bin=1.0.9
   - brotlipy=0.7.0
+  - bzip2=1.0.8
   - ca-certificates=2021.10.8
   - certifi=2021.10.8
   - cffi=1.15.0
   - charset-normalizer=2.0.9
-  - cryptography=36.0.0
+  - colorama=0.4.4
+  - cryptography=36.0.1
   - cycler=0.11.0
   - debugpy=1.5.1
   - decorator=5.1.0
   - defusedxml=0.7.1
   - entrypoints=0.3
-  - fonttools=4.28.3
+  - fonttools=4.28.5
   - freetype=2.10.4
   - idna=3.1
-  - importlib-metadata=4.8.2
+  - importlib-metadata=4.10.0
   - importlib_resources=5.4.0
   - ipykernel=6.6.0
   - ipython=7.30.1
@@ -40,7 +42,7 @@ dependencies:
   - joblib=1.1.0
   - jpeg=9d
   - json5=0.9.5
-  - jsonschema=4.2.1
+  - jsonschema=4.3.2
   - jupyter_client=7.1.0
   - jupyter_core=4.9.1
   - jupyter_server=1.13.1
@@ -61,6 +63,7 @@ dependencies:
   - libgfortran=5.0.0.dev0
   - libgfortran5=11.0.1.dev0
   - liblapack=3.9.0
+  - libllvm11=11.1.0
   - libopenblas=0.3.18
   - libpng=1.6.37
   - libsodium=1.0.18
@@ -68,6 +71,7 @@ dependencies:
   - libwebp-base=1.2.1
   - libzlib=1.2.11
   - llvm-openmp=12.0.1
+  - llvmlite=0.37.0
   - lz4-c=1.9.3
   - markupsafe=2.0.1
   - matplotlib-base=3.5.1
@@ -81,7 +85,8 @@ dependencies:
   - ncurses=6.2
   - nest-asyncio=1.5.4
   - notebook=6.4.6
-  - numpy=1.21.4
+  - numba=0.54.1
+  - numpy=1.19.5
   - olefile=0.46
   - openjpeg=2.4.0
   - openssl=1.1.1l
@@ -99,11 +104,12 @@ dependencies:
   - ptyprocess=0.7.0
   - pycparser=2.21
   - pygments=2.10.0
+  - pynndescent=0.5.5
   - pyopenssl=21.0.0
   - pyparsing=3.0.6
   - pyrsistent=0.18.0
   - pysocks=1.7.1
-  - python=3.9.7
+  - python=3.9.9
   - python-dateutil=2.8.2
   - python_abi=3.9
   - pytz=2021.3
@@ -115,18 +121,21 @@ dependencies:
   - seaborn=0.11.2
   - seaborn-base=0.11.2
   - send2trash=1.8.0
-  - setuptools=59.4.0
+  - setuptools=60.0.3
   - six=1.16.0
   - sniffio=1.2.0
   - sqlite=3.37.0
   - statsmodels=0.13.1
+  - tbb=2021.4.0
   - terminado=0.12.1
   - testpath=0.5.0
   - threadpoolctl=3.0.0
   - tk=8.6.11
   - tornado=6.1
+  - tqdm=4.62.3
   - traitlets=5.1.1
   - tzdata=2021e
+  - umap-learn=0.5.2
   - urllib3=1.26.7
   - wcwidth=0.2.5
   - webencodings=0.5.1
@@ -139,4 +148,4 @@ dependencies:
   - zstd=1.5.0
   - pip:
     - spotipy==2.19.0
-prefix: /opt/homebrew/Caskroom/miniforge/base/envs/liked2play
+    - -e .

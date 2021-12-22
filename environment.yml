@@ -15,4 +15,5 @@ dependencies:
   - pip
   - umap-learn
   - pip:
+      - -e .
       - spotipy
